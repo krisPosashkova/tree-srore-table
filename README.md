@@ -27,3 +27,4 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+Проект доступен по ссылке: [tree-store-table на Vercel](https://tree-srore-table.vercel.app/)
