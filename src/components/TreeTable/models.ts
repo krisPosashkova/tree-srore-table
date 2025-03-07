@@ -4,10 +4,15 @@ export type TProcessedItem = {
   path: string[]
 } & TItem
 
+type TCustomItem = {
+  id: string | number
+  oldValue: string
+  newValue: string
+}
 
 export type THistoryAction = {
   type: 'add' | 'remove' | 'edit';
-  data?: TItem | TItem[];
+  data?: TItem | TItem[] | TCustomItem;
   oldValue?: string;
   undo: () => void;
   redo: () => void;

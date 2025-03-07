@@ -40,7 +40,7 @@ import {
   type ICellRendererParams
 } from 'ag-grid-community'
 import type { TItem } from '@/utils/TreeStore/types.ts'
-import type { RowNumbersOptions } from 'ag-grid-community/dist/types/src/interfaces/rowNumbers'
+import type { RowNumbersOptions } from 'ag-grid-community'
 import TreeStore from '@/utils/TreeStore'
 import { TEST_DATA_ITEMS } from '@/utils/TreeStore/__tests__/testData.ts'
 import TableControls from '@/components/TableControls/TableControls.vue'
@@ -169,8 +169,8 @@ const onGridReady = (params: GridReadyEvent) => {
 }
 
 const editItemLabel = (item: TItem) => {
-  const currentLabel = item.label
-  const newLabel = prompt('Enter new label:', currentLabel)
+  const currentLabel = item.label || ''
+  const newLabel = prompt('Enter new label:', currentLabel) || ''
 
   if (newLabel !== currentLabel) {
     const itemToUpdate = treeStoreInstance.value.getItem(item.id)
